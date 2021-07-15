@@ -1,1 +1,25 @@
+#pao_ma_deng
+#code C++
 
+void setup()
+{
+  pinMode(1, OUTPUT);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+}
+
+void loop()
+{
+  for(int a=1;a<7;a++)
+  {
+    digitalWrite(a, HIGH);
+    delay(1000); 
+    digitalWrite(a, LOW);
+  }
+}
+
+//电路图：
+//![pao_ma_deng](https://img02.sogoucdn.com/app/a/100520146/974fe2444fed220fd1d8224ce11c5275)
