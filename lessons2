@@ -23,3 +23,65 @@ void loop()
 
 //电路图：
 //![pao_ma_deng](https://img02.sogoucdn.com/app/a/100520146/974fe2444fed220fd1d8224ce11c5275)
+
+
+#shu_ma_guan
+#code C++
+
+void setup()
+{
+  Serial.begin(9600);
+  for(int b=2;b<9;b++)
+  {
+    pinMode(b,OUTPUT);
+  }
+}
+byte b;
+
+void loop()
+{
+  while(Serial.available()>0)
+  {
+    b=Serial.read();
+    b=b-'0';
+  	switch(b)
+    {
+      case 0:digitalWrite(2,HIGH);digitalWrite(3,HIGH);
+             digitalWrite(4,HIGH);digitalWrite(5,HIGH);
+             digitalWrite(6,HIGH);digitalWrite(7,HIGH);
+             digitalWrite(8,LOW);break;
+      case 1:digitalWrite(2,LOW);digitalWrite(3,HIGH);
+             digitalWrite(4,HIGH);digitalWrite(5,LOW);
+             digitalWrite(6,LOW);digitalWrite(7,LOW);
+             digitalWrite(8,LOW);break;
+      case 2:digitalWrite(2,HIGH);digitalWrite(3,HIGH);
+             digitalWrite(4,LOW);digitalWrite(5,HIGH);
+             digitalWrite(6,HIGH);digitalWrite(7,LOW);
+             digitalWrite(8,HIGH);break;
+      case 3:digitalWrite(2,HIGH);digitalWrite(3,HIGH);
+             digitalWrite(4,HIGH);digitalWrite(5,HIGH);
+             digitalWrite(6,LOW);digitalWrite(7,LOW);
+             digitalWrite(8,HIGH);break;
+      case 4:digitalWrite(2,LOW);digitalWrite(3,HIGH);
+             digitalWrite(4,HIGH);digitalWrite(5,LOW);
+             digitalWrite(6,LOW);digitalWrite(7,HIGH);
+             digitalWrite(8,HIGH);break;
+      case 5:digitalWrite(2,HIGH);digitalWrite(3,LOW);
+             digitalWrite(4,HIGH);digitalWrite(5,HIGH);
+             digitalWrite(6,HIGH);digitalWrite(7,LOW);
+             digitalWrite(8,HIGH);break;
+      case 6:digitalWrite(2,HIGH);digitalWrite(3,LOW);
+             digitalWrite(4,HIGH);digitalWrite(5,HIGH);
+             digitalWrite(6,HIGH);digitalWrite(7,HIGH);
+             digitalWrite(8,HIGH);break;
+      case 7:digitalWrite(2,HIGH);digitalWrite(3,HIGH);
+             digitalWrite(4,HIGH);digitalWrite(5,LOW);
+             digitalWrite(6,LOW);digitalWrite(7,LOW);
+             digitalWrite(8,LOW);break;
+      case 8:digitalWrite(2,HIGH);digitalWrite(3,HIGH);
+             digitalWrite(4,HIGH);digitalWrite(5,HIGH);
+             digitalWrite(6,HIGH);digitalWrite(7,HIGH);
+             digitalWrite(8,HIGH);break;
+    }
+  }
+}
